@@ -1,11 +1,33 @@
 /* Gneral */
 
 *{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+}
+/* CSS */
+ .loader-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
 }
 
+.loader-overlay.hidden {
+    display: none;
+}
+
+
+
+.spinner-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+} 
 
 .container {
     position: relative;
@@ -16,8 +38,9 @@
     bottom: 20px; /* Adjust this value to change the distance from the bottom */
     right: 20px; /* Adjust this value to change the distance from the right */
     z-index: 9999; /* Ensure the widget appears above other content */
-  }
-  
+}
+
+
 
 /* nav bar */
 
@@ -46,7 +69,7 @@
 /**************************************** Home Page *********************/
 /* hero section */
   .hero-section {
-    background-image: url('../background/1.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-image: url('../Images/1\ jpeg.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
     background-size: cover;
     background-position: center; 
     height: 500px; 
@@ -62,25 +85,35 @@
 
 span.gradient-background{
     color: #0E21A0;
+    font-family:Chakra Petch, Arial;;
 
 }
+
 /* Programs */
 
+h1,h2,h4,h5,.pm-body{
+font-family: Chakra Petch, Arial;
+color: #0E21A0;
+}
 
-/* .program-section {
-    background-image: url('../background/background.png');
-    background-size: cover;
-    background-position: center;
-    height: auto;
-  }
-.programs{
-    color: white;
-    text-align: center;
-} */
 
-.program-section{
+.gradient-bg{
         background: linear-gradient(to right, #0E21A0,  #0E21A0, #4D2DB7 ,#9D44C0 );
         color: white; 
+        height: auto;
+        width: auto;
+}
+
+.pm-program-card:hover{
+    border: 1.5px solid #9D44C0;
+    background-color: #ddbee9 ;
+
+}
+
+.pm-heading{
+    background-color: #0E21A0;
+    color: whitesmoke;
+    font-family: Chakra Petch, Arial;
 }
 
 
@@ -110,7 +143,7 @@ span.gradient-background{
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Prevent scrollbars */
+    /* Prevent scrollbars */
 }
 
 .scroller {
@@ -148,45 +181,51 @@ body {
 
             
 /* standout */
-/* .standout{
-    background-image: url('../background/impact-background.png');
-    background-size: cover;
-    background-position: center;
-    height: auto;
-  } */
+h1.standout-heading{
+    color: #0E21A0;
+}
+
+/* h4.standout-sub{
+    color: #0E21A0;
+} */
 
 .border-custom-color{
     border: 2px solid #e1c6ec;
     border-radius: 6px;
-    background-color: #e1c6ec;;
 } 
 
 .border-custom-color-1{
     border: 2px solid #b6bce2;
     border-radius: 6px;
-    background-color: #b6bce2;
-
 }
-
-h2.standout-heading{
-    background: linear-gradient(to right, #0E21A0,  #0E21A0, #4D2DB7 ,#9D44C0 );
-    -webkit-background-clip: text;    
-    color: transparent; 
-}
-
     
+.border-custom-color-1:hover{
+    background-color: #0E21A0;
+    border: 2px solid #b6bce2;
+    border-radius: 6px;
+    color: white;
+}
+
+.border-custom-color:hover{
+    background-color: #0E21A0;
+    border: 2px solid #b6bce2;
+    border-radius: 6px;
+   color: white!important;
+}
+
+/* h4.standout-sub:hover{
+    color: white;
+} */
+
 /* buttons */
+
 a.btn-primary{
-        /* background: linear-gradient(to right,
-         #9D44C0 0%, 
-         #0E21A0 100%, 
-         #4D2DB7 1% );   */
          border: 1px solid;
          border-color: #0E21A0;
          background-color: #0E21A0;
          color: whitesmoke;
-         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-         font-size: 1rem;
+         font-family: Chakra Petch, Arial;
+         /* box-shadow: 5px 5px 1px 5px #9D44C0 , 5px 5px 1px 5px #9D44C0 ;  */
 }
 
 a.btn-primary:hover{
@@ -209,13 +248,17 @@ a.btn-primary:hover{
     color:  #0E21A0;
     border: 1px solid  #0E21A0;
     background-color: #FBF9FC; 
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-         font-size: 1rem;
+    font-family:Chakra Petch, Arial;
+     font-size: 1rem;
+    box-shadow: 5px 5px 1px 5px #0E21A0, 5px 5px 1px 5px #9D44C0 ; /* Black and red shadows */
+
   }
   
   .btn.btn-outline-secondary:hover {
-    color:  whitesmoke;
-    background-color:  #0E21A0;
+    color:  #0E21A0;
+    border-color: #0E21A0;;
+    background-color:  whitesmoke;
+    box-shadow: none;
   }
 
 .socials{
@@ -224,23 +267,21 @@ a.btn-primary:hover{
 
 /* footer */
 .footer {
-    background-color: #e6e8f5;
+    background-color: #0E21A0;
     height: auto;
     width: auto;
-    color: black;
+    color: white;
 }
 
-
+.socials {
+    filter: invert(100%);
+}
 
 *{
     margin: 0;
     padding: 0;
-    font-family: system-ui, Matter, ui-sans-serif, system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji";
 }
- body{
-    font-family: system-ui, Matter, ui-sans-serif, system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji";
-    ;
- }
+
 
 
  /**************************************** product mgt- *********************/
@@ -265,29 +306,24 @@ a.btn-primary:hover{
     /* border: 2px solid #9ea6d9; */
   }
 
-  h2.heading{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-   
-}
 
   /* next cohort */
 .next-cohort{
     background:#FBF9FC;
     height: auto;
-    color: black
- 
+    color: black;
+    border-radius: 100% / 100%;
 } 
 
 h5.next-cohort{
     color: #0E21A0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 
   
 .horizontal-line {
     width: 100%; /* Set the width of the line to 100% */
-    height: 5px; /* Set the height of the line */
+    height: 2px; /* Set the height of the line */
     background: linear-gradient(to right, #0E21A0, #9D44C0,  #4D2DB7); /* Create a gradient with three colors */
   }
 
@@ -305,29 +341,22 @@ h5.next-cohort{
   }
 
 
+/* *********************************Product design page ****************************************/
 
+  . design-hero-image{
+    max-width: 100%;
+  }
 
-  
+  . design-hero-img{
+    text-align: center;
+  }
 
+  .hero-image{
+    max-width: 100%;
+
+  }
 @media screen and (max-width: 1200px) {
 
-    *{
-        font-size: 0.9rem;
-        
-    }
-    h1 span{
-        font-size: 2rem;
-    }
-
-    p span{
-        font-size: 1.2rem;
-    }
-    .hero-image{
-        width: 300px;
-        margin: 0;
-        overflow: hidden;
-    }
-  
     .nav-image{
         justify-content: left;
     }
@@ -401,6 +430,24 @@ h5.next-cohort{
     }
 }
 
+
+/* logo alignment on smaller screens */
+/* Default styles for logo */
+.logo {
+    text-align: center; /* Align center by default */
+    margin-bottom: 20px; /* Example margin for spacing */
+}
+
+.logo img {
+    max-width: 100%; /* Ensure logo does not exceed container width */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .logo {
+        text-align: left; /* Align logo to the left on smaller screens */
+    }
+}
 
  
     
